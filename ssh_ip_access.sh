@@ -12,7 +12,7 @@ if [[ "$2" =~ $regex ]] && ! [[ "$2" =~ $subnet ]] ; then
     fi
   else
     echo "not found"
-    if [[ "$2" == "-A" ]] ; then
+    if [[ "$1" == "-A" ]] ; then
       iptables -I INPUT -p tcp -s  $2 --dport 22 -j ACCEPT
       echo "added"
     fi
